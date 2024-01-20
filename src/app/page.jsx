@@ -15,7 +15,6 @@ const page = () => {
     <div className="lg:hidden">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        a11y={{ prevSlideMessage: "salam" }}
         spaceBetween={0}
         slidesPerView={1}
         navigation
