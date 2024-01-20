@@ -12,7 +12,7 @@ const CoffeeMenue = () => {
           <Logo />
         </div>
         <div>
-          <CoffeeItems/>
+          <CoffeeItems />
         </div>
       </div>
     </div>
