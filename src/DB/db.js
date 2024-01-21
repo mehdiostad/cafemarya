@@ -76,6 +76,22 @@ let noneRangeCoffees = [
     coffeeName: "شیرگرم بزرگ",
     price: "۴۰",
   },
+  {
+    coffeeName: "عربیکا اتیوپی",
+    price: "٧٠",
+  },
+  {
+    coffeeName: "عربیکا ٧٠/٣٠",
+    price: "٦٥",
+  },
+  {
+    coffeeName: "ربوستا ٧٠/٣٠",
+    price: "٦٥",
+  },
+  {
+    coffeeName: "ربوستا اوگاندا",
+    price: "٦٠",
+  },
 ];
 const menue = [rangeCoffees, noneRangeCoffees];
 

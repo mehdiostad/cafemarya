@@ -1,7 +1,8 @@
 import React from "react";
 
 import Logo from "@/components/Logo";
-
+import beenIcon from "../../public/coffee-beans.png";
+import CamkasCoffeeBar from "./CamkasCoffeeBar";
 import CoffeeItems from "@/components/CoffeeItems";
 const CoffeeMenue = () => {
   return (
@@ -9,11 +10,15 @@ const CoffeeMenue = () => {
       {/* cafe logo */}
       <div className="lg:items-end lg:flex lg:flex-col ">
         <div>
-          <Logo />
+          <Logo logo={beenIcon} />
         </div>
         <div>
           <CoffeeItems />
         </div>
+        {/* <div className="flex justify-center">
+          <CamkasCoffeeBar />
+
+        </div> */}
       </div>
     </div>
   );

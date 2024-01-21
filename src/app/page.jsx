@@ -2,7 +2,7 @@
 import React from "react";
 
 import CoffeeMenue from "@/components/CoffeeMenue";
-import IceCoffeeMenue from "@/components/IceCoffeeMenue";
+import NoneRangeCoffeeMenue from "@/components/NoneRangeCoffeeMenue";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -26,7 +26,7 @@ const page = () => {
           <CoffeeMenue />
         </SwiperSlide>
         <SwiperSlide>
-          <IceCoffeeMenue />
+          <NoneRangeCoffeeMenue />
         </SwiperSlide>
       </Swiper>
     </div>

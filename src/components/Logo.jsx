@@ -5,9 +5,8 @@ import { motion, useMotionValue, useTransform, animate, AnimatePresence } from "
 import { getIndex, useFlubber } from "./paths/use-flubber";
 import Image from "next/image";
 import cafeIcon from "../../public/coffee.png";
-import beenIcon from "../../public/coffee-beans.png";
 import heartMain from "../../public/heart.png"
-const Logo = () => {
+const Logo = ({logo}) => {
   //   const paths = [lightning, hand, plane, heart, note, star, lightning];
   //   const colors = [
   //     "#00cc88",
@@ -56,7 +55,7 @@ const Logo = () => {
           کافه ماریا
         </div>
         <div className="flex items-center w-16 h-16 ml-2">
-      <Image src={beenIcon}></Image>
+      <Image src={logo}></Image>
         </div>
       </div>
     </div>

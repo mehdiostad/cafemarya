@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "@/components/Card";
 import Item from "@/components/Item";
 import menue from "@/DB/db";
 import { motion, AnimatePresence } from "framer-motion";
-const CoffeeItems = () => {
-  const [showModal , setShowModal] = useState(false)
+const NoneRangeCoffees = () => {
   return (
     <div>
       <div className=" flex justify-center ">
-        <Card cardName={"قهوه ها"} smallSize={"تک"} largeSize={"دبل"} />
+        <Card cardName={"قهوه ها"} smallSize={"تک"}  />
       </div>
-
       <div className="flex flex-col justify-center">
-        {menue[0].map((item, idx) => (
+        {menue[1].map((item, idx) => (
           <div className=" flex  justify-center items-center " key={idx}>
             <AnimatePresence>
               <motion.li
@@ -26,19 +24,17 @@ const CoffeeItems = () => {
                 }}
               >
                 <Item
-                  itemName={item.caffeeName}
-                  smallPrice={item.smallPrice}
-                  largePrice={item.largePrice}
+                  itemName={item.coffeeName}
+                  smallPrice={item.price}
+                
                 />
               </motion.li>
             </AnimatePresence>
           </div>
         ))}
-      
       </div>
     </div>
   );
 };
 
-export default CoffeeItems;
-
+export default NoneRangeCoffees;
