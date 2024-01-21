@@ -15,10 +15,10 @@ const CoffeeMenue = () => {
         <div>
           <CoffeeItems />
         </div>
-        {/* <div className="flex justify-center">
+        <div className="flex justify-center">
           <CamkasCoffeeBar />
 
-        </div> */}
+        </div>
       </div>
     </div>
   );
