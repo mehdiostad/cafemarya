@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+"use client";
+import React, { useState } from "react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 const item = ({ itemName, smallPrice, largePrice }) => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
-
- 
-  
   return (
     <div>
       {showModal ? (
@@ -43,9 +41,11 @@ const item = ({ itemName, smallPrice, largePrice }) => {
                   <div className="flex flex-col gap-4 ml-8 justify-center  items-center">
                     <div>
                       {loading ? (
-                        <SkeletonTheme baseColor="#8d6a20" highlightColor="#444">
-
-                        <Skeleton count={5} /> // Five-line loading skeleton
+                        <SkeletonTheme
+                          baseColor="#8d6a20"
+                          highlightColor="#444"
+                        >
+                          <Skeleton count={5} />
                         </SkeletonTheme>
                       ) : (
                         <iframe
@@ -57,7 +57,10 @@ const item = ({ itemName, smallPrice, largePrice }) => {
                         ></iframe>
                       )}
                     </div>
-                    <div className="text-start flex justify-center items-center" style={{direction:"rtl"}}>
+                    <div
+                      className="text-start flex justify-center items-center"
+                      style={{ direction: "rtl" }}
+                    >
                       <p className="text-black flex justify-center items-center mr-8 ">
                         آفوگاتو یکی از بهترین و قدیمی ترین دسر های ایتالیایی هست
                         که طرز تهیه اون بسیار سادست . آفوگاتو یک ترکیب بسیار
@@ -80,7 +83,7 @@ const item = ({ itemName, smallPrice, largePrice }) => {
                       type="button"
                       onClick={() => setShowModal(false)}
                     >
-                     !نوش جان
+                      !نوش جان
                     </button>
                   </div>
                 </div>
@@ -100,7 +103,7 @@ const item = ({ itemName, smallPrice, largePrice }) => {
               className="-mr-2 font-bold text-xl"
               onClick={() => {
                 setShowModal(true);
-                const timer =  setTimeout(() => setLoading(false), 1500);
+                const timer = setTimeout(() => setLoading(false), 1500);
                 return () => clearTimeout(timer);
               }}
             >
