@@ -1,24 +1,27 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import "react-toastify/dist/ReactToastify.css";
 import Logo from "@/components/Logo";
 import beenIcon from "../../public/coffee-beans.png";
 import CamkasCoffeeBar from "./CamkasCoffeeBar";
 import CoffeeItems from "@/components/CoffeeItems";
+import heart from "../../public/heart.png";
 const CoffeeMenue = () => {
+
+
   return (
-    <div className="flex flex-col bg-zinc-800 text-white h-[100vh] bg-[url('../../public/pexels-chevanon-photography-312418.jpg')] bg-cover bg-center">
+    <div className=" border-t-2 border-dashed shadow-2xl z-10 flex flex-col bg-zinc-800 text-white h-[100vh] bg-[url('../../public/Untitled-2.jpg')] bg-cover bg-center">
       {/* cafe logo */}
-      <div className="lg:items-end lg:flex lg:flex-col ">
-        <div>
-          <Logo logo={beenIcon} />
+      <div className="lg:items-end lg:flex lg:flex-col mr-24">
+        <div onClick={() => toast("salam")}>
+          <Logo logo={heart} />
         </div>
+
         <div>
           <CoffeeItems />
         </div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <CamkasCoffeeBar />
-
-        </div>
+        </div> */}
       </div>
     </div>
   );

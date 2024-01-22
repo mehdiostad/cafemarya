@@ -77,19 +77,19 @@ let noneRangeCoffees = [
     price: "۴۰",
   },
   {
-    coffeeName: "عربیکا اتیوپی",
+    coffeeName: "دمی عربیکا اتیوپی",
     price: "٧٠",
   },
   {
-    coffeeName: "عربیکا ٧٠/٣٠",
+    coffeeName: "دمی عربیکا ٧٠/٣٠",
     price: "٦٥",
   },
   {
-    coffeeName: "ربوستا ٧٠/٣٠",
+    coffeeName: "دمی ربوستا ٧٠/٣٠",
     price: "٦٥",
   },
   {
-    coffeeName: "ربوستا اوگاندا",
+    coffeeName: "دمی ربوستا اوگاندا",
     price: "٦٠",
   },
 ];
