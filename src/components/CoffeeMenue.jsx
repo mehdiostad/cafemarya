@@ -4,7 +4,7 @@ import Logo from "@/components/Logo";
 import beenIcon from "../../public/coffee-beans.png";
 import CamkasCoffeeBar from "./CamkasCoffeeBar";
 import CoffeeItems from "@/components/CoffeeItems";
-import heart from "../../public/heart.png";
+import logo from "../../public/heart.png";
 const CoffeeMenue = () => {
 
 
@@ -13,7 +13,7 @@ const CoffeeMenue = () => {
       {/* cafe logo */}
       <div className="lg:items-end lg:flex lg:flex-col mr-24">
         <div onClick={() => toast("salam")}>
-          <Logo logo={heart} />
+          <Logo logo={logo} />
         </div>
 
         <div>

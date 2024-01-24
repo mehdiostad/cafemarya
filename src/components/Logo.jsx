@@ -53,14 +53,14 @@ const Logo = ({ logo }) => {
         </svg>
       </div>
       <div className="flex items-center gap-0 mr-9 mb-3">
-        <div className="relative flex items-center w-6 h-6 mr-2 mb-2">
+        <div className="relative flex items-center w-5 h-5 mr-2 mb-2">
           <Image
             src={logo}
             className=" motion-safe:animate-ping ease-in-out absolute inline-flex h-full w-full rounded-full  opacity-75"
           ></Image>
           <Image src={logo} className="relative "></Image>
         </div>
-        <div className="rightness-100 text-white flex justify-center  font-black text-3xl -mr-2 shadow-2xl border-r-2 border-dashed pr-2 border-b-2 border-[#3f3220] rounded-lg pb-1">
+        <div className="brightness-100 text-[#c1a889] flex justify-center  font-black text-3xl -mr-2 shadow-2xl  pr-2 rounded-lg pb-1">
           کافه ماریا
         </div>
       </div>
