@@ -16,7 +16,7 @@ const page = () => {
     console.log("timer started");
     const timer = setTimeout(() => {
       toast.warn(" صفحه بعدی رو هم ببینید");
-    }, 10000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
   return (
