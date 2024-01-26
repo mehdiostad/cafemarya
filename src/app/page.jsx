@@ -40,7 +40,7 @@ const page = () => {
         modules={[Navigation, Scrollbar, Pagination]}
         spaceBetween={0}
         slidesPerView={0.8}
-        // navigation
+        navigation
         scrollbar={{ draggable: true }}
         // cssMode={true}
         onSlideChange={() => setScroll(true)}

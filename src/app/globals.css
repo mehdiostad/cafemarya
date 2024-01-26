@@ -3,19 +3,45 @@
 @tailwind utilities;
 
 :root {
-
 }
 @font-face {
-    font-family: "Yekan Bakh";
-    src: url(../fonts/YEKAN\ BAKH\ FA-EN\ 05\ MEDIUM.TTF);
+  font-family: "Yekan Bakh";
+  src: url(../fonts/YEKAN\ BAKH\ FA-EN\ 05\ MEDIUM.TTF);
 }
 
 @media (prefers-color-scheme: dark) {
-
 }
-*{
-    font-family: 'Yekan Bakh';
+* {
+  font-family: "Yekan Bakh";
 }
 body {
-
 }
+.swiper-button-next,
+.swiper-button-prev {
+  
+  padding: 10px;
+  color: #57421a !important;
+  fill: #57421a !important;
+  stroke: #57421a !important;
+}
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: 0;
+  height: 40px;
+  /* color: white; */
+  background-color: #b8b8b8;
+}
+.swiper-scrollbar-drag {
+  background: none;
+  background-color: #fff;
+}
+/* .swiper-scrollbar-drag:after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: blue;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -20px;
+} */
