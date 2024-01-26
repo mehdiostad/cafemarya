@@ -9,17 +9,17 @@ import logo from "../../public/heart.png";
 import Instagram from "../../public/instagram.png";
 const IceCoffeeMenue = () => {
   return (
-    <div className=" border-t-2 border-r-2 border-b-2 border-dashed shadow-2xl z-10 flex flex-col bg-[url('../../public/Untitled-3.jpg')]  text-white h-[100vh] bg-[#8c7652] bg-cover bg-center object-cover">
+    <div className="!border-0 !shadow-none flex flex-col items-center bg-[url('../../public/Untitled-3.jpg')]  text-white h-[100vh] bg-[#8c7652] bg-cover bg-center ">
       {/* cafe logo */}
-      <div className="lg:items-end lg:flex lg:flex-col mr-24">
+      <div className="lg:items-end lg:flex lg:flex-col mr-24 mt-8">
         <Logo logo={iceCoffeIcon} />
         <div>
           <NoneRangeCoffees />
         </div>
-        <div>
+        <div className="ml-8">
           <CamkasCoffeeBar />
         </div>
-        <div className="flex justify-end mr-8 mt-32 animate-bounce ml-2 ">
+        <div className="absolute bottom-4 animate-bounce right-40 ">
           <a href="https://instagram.com/cafemarya" target="_blank">
           <Image src={Instagram} width={30} />
           </a>

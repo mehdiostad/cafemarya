@@ -21,7 +21,7 @@ const page = () => {
   }, []);
   return (
     <div className="lg:hidden">
-        <div className="flex justify-center items-center mr-72" >
+      <div className="flex justify-center items-center mr-72 ">
         <ToastContainer
           position="top-left"
           autoClose={3000}
@@ -34,15 +34,16 @@ const page = () => {
           pauseOnHover
           theme="colored"
         />
-        </div>
+      </div>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        // modules={[Navigation,]}
         spaceBetween={0}
         slidesPerView={0.8}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
+        // navigation
+        // pagination={{ clickable: true }}
+        // scrollbar={{ draggable: true }}
+        // onSwiper={(swiper) => console.log(swiper)}
+        cssMode={true}
       >
         <SwiperSlide>
           <CoffeeMenue />

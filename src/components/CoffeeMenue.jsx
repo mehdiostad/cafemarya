@@ -6,22 +6,17 @@ import CamkasCoffeeBar from "./CamkasCoffeeBar";
 import CoffeeItems from "@/components/CoffeeItems";
 import logo from "../../public/heart.png";
 const CoffeeMenue = () => {
-
-
   return (
-    <div className=" border-t-2 border-dashed shadow-2xl z-10 flex flex-col bg-zinc-800 text-white h-[100vh] bg-[url('../../public/Untitled-2.jpg')] bg-cover bg-center">
+    <div className=" !border-0 !shadow-none flex md: flex-col bg-zinc-800 text-white h-[100vh] bg-[url('../../public/Untitled-2.jpg')] bg-cover bg-center">
       {/* cafe logo */}
-      <div className="lg:items-end lg:flex lg:flex-col mr-24">
-        <div onClick={() => toast("salam")}>
+      <div className="lg:items-end lg:flex lg:flex-col mr-24 mt-8">
+        <div>
           <Logo logo={logo} />
         </div>
 
         <div>
           <CoffeeItems />
         </div>
-        {/* <div className="flex justify-center">
-          <CamkasCoffeeBar />
-        </div> */}
       </div>
     </div>
   );

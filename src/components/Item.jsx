@@ -55,7 +55,7 @@ const item = ({ itemName, smallPrice, largePrice }) => {
             >
               <motion.div
                 variants={modalVariant}
-                className=" w-96 ml-1 transition-all duration-75 ease-in-out backdrop-blur-sm justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                className=" w-[25.25rem] ml-1 transition-all duration-75 ease-in-out backdrop-blur-sm justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
               >
                 <div className="relative flex items-center justify-center w-auto my-6 mx-auto max-w-xl">
                   {/*content*/}
