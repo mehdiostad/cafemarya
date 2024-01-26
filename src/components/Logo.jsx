@@ -46,7 +46,7 @@ const Logo = ({ logo }) => {
     //   }, [pathIndex]);
 
   return (
-    <div className="flex items-center w-full justify-center -mt-8 h-32 mb-2 mr-4">
+    <div className="flex items-center w-full justify-center  mb-2 mr-4">
       <div>
         <svg className=" flex  w-16 h-16 items-center justify-center mt-8 -mr-9 ">
           {/* <motion.path fill={fill} d={path} /> */}

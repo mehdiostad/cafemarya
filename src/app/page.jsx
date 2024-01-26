@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 import CoffeeMenue from "@/components/CoffeeMenue";
@@ -12,11 +12,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 const page = () => {
+  const [scroll, setScroll] = useState(false);
   useEffect(() => {
+    if (scroll) return;
     console.log("timer started");
     const timer = setTimeout(() => {
-      toast.warn(" صفحه بعدی رو هم ببینید");
-    }, 5000);
+      toast.info("صفحات دیگه رو هم ببینید!");
+    }, 15000);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -36,13 +38,16 @@ const page = () => {
         />
       </div>
       <Swiper
-        // modules={[Navigation,]}
+        modules={[Navigation, Scrollbar, Pagination]}
         spaceBetween={0}
         slidesPerView={0.8}
         // navigation
         // pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
+        scrollbar={{ draggable: true }}
         // onSwiper={(swiper) => console.log(swiper)}
+        onClick={() => {
+          console.log("scroll shode")
+        }}
         cssMode={true}
       >
         <SwiperSlide>
