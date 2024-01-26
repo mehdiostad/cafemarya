@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const NoneRangeCoffees = () => {
   return (
     <div>
-      <div className=" flex justify-center ml-4">
+      <div className=" flex justify-center ml-4 mt-16">
         <Card cardName={"نوشیدنی های گرم"} smallSize={"تک"}  />
       </div>
       <div className="flex flex-col justify-center">

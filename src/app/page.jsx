@@ -12,10 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 const page = () => {
-  const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    if (scroll) return;
-    console.log("timer started");
     const timer = setTimeout(() => {
       toast.info("صفحات دیگه رو هم ببینید!");
     }, 15000);
@@ -42,13 +39,8 @@ const page = () => {
         spaceBetween={0}
         slidesPerView={0.8}
         // navigation
-        // pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        onClick={() => {
-          console.log("scroll shode")
-        }}
-        cssMode={true}
+        // cssMode={true}
       >
         <SwiperSlide>
           <CoffeeMenue />

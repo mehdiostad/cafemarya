@@ -8,7 +8,7 @@ const CoffeeItems = () => {
   const [showModal , setShowModal] = useState(false)
   return (
     <div>
-      <div className=" flex justify-center ">
+      <div className=" flex justify-center mt-16">
         <Card cardName={"قهوه ها"} smallSize={"تک"} largeSize={"دبل"} />
       </div>
 
