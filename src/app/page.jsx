@@ -16,6 +16,7 @@ const page = () => {
   const [renderComponent, setRenderComponent] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
+
     if (activeIndex == 1) setRenderComponent(true);
     if (scroll) return;
     const timer = setTimeout(() => {
@@ -52,7 +53,7 @@ const page = () => {
         }}
       >
         <SwiperSlide>
-          <CoffeeMenue />
+          <CoffeeMenue/>
         </SwiperSlide>
         <SwiperSlide>
           <NoneRangeCoffeeMenue isReRender={renderComponent} />
