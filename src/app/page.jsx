@@ -13,13 +13,16 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 const page = () => {
   const [scroll, setScroll] = useState(false);
+  const [renderComponent, setRenderComponent] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
+    if (activeIndex == 1) setRenderComponent(true);
     if (scroll) return;
     const timer = setTimeout(() => {
       toast.info("صفحات دیگه رو هم ببینید!");
     }, 15000);
     return () => clearTimeout(timer);
-  }, [scroll]);
+  }, [scroll, activeIndex]);
   return (
     <div className="lg:hidden">
       <div className="flex justify-center items-center mr-72 ">
@@ -43,13 +46,16 @@ const page = () => {
         navigation
         scrollbar={{ draggable: true }}
         // cssMode={true}
-        onSlideChange={() => setScroll(true)}
+        onSlideChange={(Swiper) => {
+          setScroll(true);
+          setActiveIndex(Swiper.activeIndex);
+        }}
       >
         <SwiperSlide>
           <CoffeeMenue />
         </SwiperSlide>
         <SwiperSlide>
-          <NoneRangeCoffeeMenue />
+          <NoneRangeCoffeeMenue isReRender={renderComponent} />
         </SwiperSlide>
       </Swiper>
     </div>

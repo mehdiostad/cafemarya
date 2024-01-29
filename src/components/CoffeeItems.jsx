@@ -3,9 +3,9 @@ import Card from "@/components/Card";
 import Item from "@/components/Item";
 import menue from "@/DB/db";
 import { motion, AnimatePresence } from "framer-motion";
-import CamkasCoffeeBar from "../components/CamkasCoffeeBar"
+import CamkasCoffeeBar from "../components/CamkasCoffeeBar";
 const CoffeeItems = () => {
-  const [showModal , setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <div className=" flex justify-center mt-16">
@@ -35,11 +35,9 @@ const CoffeeItems = () => {
             </AnimatePresence>
           </div>
         ))}
-     
       </div>
     </div>
   );
 };
 
 export default CoffeeItems;
-
