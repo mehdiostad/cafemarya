@@ -12,19 +12,18 @@ const CoffeeMenue = () => {
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
     return () => clearTimeout(loadingTimer);
   });
   return (
     <>
       {isLoading ? (
-        <div className="h-[100vh] bg-[#8c7652] flex flex-col justify-center items-center text-white scale-150">
-          <div>به کافه ماریا خوش آمدید</div>
+        <div className="h-[100vh] bg-[#8c7652] flex flex-col justify-center items-center text-white">
+          
           <div
             role="status"
             className="max-w-md p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700"
           >
-            <div className="flex justify-center' items-center " dir="rtl">صبر کنید...</div>
             <div className="flex items-center justify-between">
               <div>
                 <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
