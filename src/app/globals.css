@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: "Yekan Bakh";
-  src: url(/fonts/YEKAN\ BAKH\ FA-EN\ 05\ MEDIUM.TTF);
+  src: url(../fonts/YEKAN\ BAKH\ FA-EN\ 05\ MEDIUM.TTF);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,7 +18,6 @@ body {
 }
 .swiper-button-next,
 .swiper-button-prev {
-  
   padding: 10px;
   color: #57421a !important;
   fill: #57421a !important;
