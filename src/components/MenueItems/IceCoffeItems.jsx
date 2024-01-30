@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "@/components/Card";
 import Item from "@/components/Item";
 import menue from "@/DB/db";
 import { motion, AnimatePresence } from "framer-motion";
-import CamkasCoffeeBar from "../components/CamkasCoffeeBar";
-const CoffeeItems = () => {
-  const [showModal, setShowModal] = useState(false);
+const IceCoffeItems = () => {
   return (
     <div>
       <div className=" flex justify-center mt-16">
@@ -40,4 +38,4 @@ const CoffeeItems = () => {
   );
 };
 
-export default CoffeeItems;
+export default IceCoffeItems;

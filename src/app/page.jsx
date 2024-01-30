@@ -2,8 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-import CoffeeMenue from "@/components/CoffeeMenue";
-import NoneRangeCoffeeMenue from "@/components/NoneRangeCoffeeMenue";
+import CoffeeMenue from "@/components/Menues/CoffeeMenue";
+import NoneRangeCoffeeMenue from "@/components/Menues/NoneRangeCoffeeMenue";
+import TeaMenue from "@/components/Menues/TeaMenue";
+import ColdMenue from "@/components/Menues/ColdMenue";
+import BreakFastMenue from "@/components/Menues/BreakFastMenue";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -15,15 +18,18 @@ const page = () => {
   const [scroll, setScroll] = useState(false);
   const [renderComponent, setRenderComponent] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndexChanged, setActiveIndexChanged] = useState(false);
   useEffect(() => {
-
-    if (activeIndex == 1) setRenderComponent(true);
+    if (activeIndexChanged) {
+      setRenderComponent(true);
+      setActiveIndexChanged(false);
+    }
     if (scroll) return;
     const timer = setTimeout(() => {
       toast.info("صفحات دیگه رو هم ببینید!");
     }, 15000);
     return () => clearTimeout(timer);
-  }, [scroll, activeIndex]);
+  }, [scroll, activeIndex, activeIndexChanged]);
   return (
     <div className="lg:hidden">
       <div className="flex justify-center items-center mr-72 ">
@@ -50,13 +56,23 @@ const page = () => {
         onSlideChange={(Swiper) => {
           setScroll(true);
           setActiveIndex(Swiper.activeIndex);
+          setActiveIndexChanged(true);
         }}
       >
         <SwiperSlide>
-          <CoffeeMenue/>
+          <CoffeeMenue />
         </SwiperSlide>
         <SwiperSlide>
           <NoneRangeCoffeeMenue isReRender={renderComponent} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeaMenue isReRender={renderComponent} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ColdMenue isReRender={renderComponent} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <BreakFastMenue isReRender={renderComponent} />
         </SwiperSlide>
       </Swiper>
     </div>

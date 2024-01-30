@@ -12,7 +12,7 @@ const Logo = ({ logo }) => {
           ></Image>
           <Image src={logo} className="relative "></Image>
         </div>
-        <div className="brightness-100 text-[#c1a889] flex justify-center  font-black text-3xl -mr-2   pr-2 rounded-lg pb-1">
+        <div className="brightness-100 text-white flex justify-center  font-black text-3xl -mr-2   pr-2 rounded-lg pb-1">
           کافه ماریا
         </div>
       </div>

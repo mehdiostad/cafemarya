@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import "./Camkas.css";
+
 const camkasCoffeeBar = () => {
   return (
     <div className="flex flex-col justify-center items-center  mt-4 w-96  gap-2 border-white py-2 rouded-lg  ">
