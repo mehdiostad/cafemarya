@@ -12,10 +12,7 @@ const ColdDrinkItems = ({ isReRender }) => {
       {isReRender && (
         <div className="flex flex-col justify-center">
           {menue[3].map((item, idx) => (
-            <div
-              className=" flex  justify-center items-center scale-95 text-xs"
-              key={idx}
-            >
+            <div className=" flex  justify-center items-center" key={idx}>
               <AnimatePresence>
                 <motion.li
                   initial={{ scale: 0, opacity: 0 }}
@@ -37,10 +34,7 @@ const ColdDrinkItems = ({ isReRender }) => {
             </div>
           ))}
           {menue[4].map((item, idx) => (
-            <div
-              className=" flex  justify-center items-center scale-95 text-xs"
-              key={idx}
-            >
+            <div className=" flex  justify-center items-center " key={idx}>
               <AnimatePresence>
                 <motion.li
                   initial={{ scale: 0, opacity: 0 }}
