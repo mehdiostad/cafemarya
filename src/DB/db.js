@@ -206,7 +206,7 @@ let noneRangeColdDrinks = [
   },
   {
     itemName: "شیک کارامل",
-    price: "",
+    price: "۱۱۵",
   },
   {
     itemName: "شیک نوتلا",
