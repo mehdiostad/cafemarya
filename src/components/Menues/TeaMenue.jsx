@@ -12,7 +12,7 @@ const TeaMenue = ({ isReRender }) => {
         <Logo logo={teaIcon} />
 
         </div>
-        <div className="">
+        <div className="-mt-8">
           <TeaItems isReRender={isReRender} />
         </div>
       </div>

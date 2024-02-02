@@ -16,7 +16,7 @@ const IceCoffeeMenue = ({ isReRender }) => {
         <Logo logo={iceCoffeIcon} />
         </div>
           
-        <div className="">
+        <div className="-mt-8">
           <NoneRangeCoffees isReRender={isReRender} />
         </div>
         <div className="ml-8 ">
