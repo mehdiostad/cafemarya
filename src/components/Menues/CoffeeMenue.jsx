@@ -10,11 +10,11 @@ const CoffeeMenue = () => {
     <div className=" !border-0 !shadow-none flex md: flex-col bg-zinc-800 text-white h-[100vh] bg-[url('../../public/CafeMarya1.jpg')] bg-cover bg-center">
       {/* cafe logo */}
       <div className="lg:items-end lg:flex lg:flex-col mr-24 mt-8">
-        <div className="mt-8">
+        <div className="">
           <Logo logo={logo} />
         </div>
 
-        <div className="-mt-8">
+        <div className="-">
           <CoffeeItems />
         </div>
       </div>
