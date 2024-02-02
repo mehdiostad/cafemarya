@@ -8,8 +8,11 @@ const ColdMenue = ({ isReRender }) => {
     <div className="!border-0 !shadow-none flex flex-col items-center bg-[url('../../public/CafeMarya4.jpg')]  text-white h-[100vh] bg-[#8c7652] bg-cover bg-center ">
       {/* cafe logo */}
       <div className="lg:items-end lg:flex lg:flex-col mr-24 mt-8">
+        <div className="mt-8">
         <Logo logo={coldDrinkIcon} />
-        <div>
+
+        </div>
+        <div className="-mt-8">
           <ColdDrinkItems isReRender={isReRender} />
         </div>
       </div>
