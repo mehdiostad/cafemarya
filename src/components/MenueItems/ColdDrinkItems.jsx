@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const ColdDrinkItems = ({ isReRender }) => {
   return (
     <div>
-      <div className=" flex justify-center mt-16">
+      <div className=" flex justify-center mt-12">
         <Card cardName={"سردنوش ها"} smallSize={"کوچک"} largeSize={"بزرگ"} />
       </div>
       {isReRender && (
