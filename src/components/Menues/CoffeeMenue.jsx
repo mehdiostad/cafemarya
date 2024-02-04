@@ -2,6 +2,7 @@
 import React from "react";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "@/components/Logo";
+import CamkasCoffeeBar from "../CamkasCoffeeBar";
 
 import CoffeeItems from "@/components/MenueItems/CoffeeItems";
 import logo from "../../../public/heart.png";
@@ -16,6 +17,9 @@ const CoffeeMenue = () => {
 
         <div className="-mt-8">
           <CoffeeItems />
+        </div>
+        <div className="ml-5 ">
+          <CamkasCoffeeBar />
         </div>
       </div>
     </div>

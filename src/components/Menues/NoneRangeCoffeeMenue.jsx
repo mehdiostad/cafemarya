@@ -4,7 +4,6 @@ import Logo from "../Logo";
 import CoffeeItems from "../MenueItems/CoffeeItems";
 import iceCoffeIcon from "../../../public/coffee-beans.png";
 import NoneRangeCoffees from "../MenueItems/NoneRangeCoffees";
-import CamkasCoffeeBar from "../CamkasCoffeeBar";
 import logo from "../../../public/heart.png";
 import Instagram from "../../../public/instagram.png";
 const IceCoffeeMenue = ({ isReRender }) => {
@@ -19,9 +18,7 @@ const IceCoffeeMenue = ({ isReRender }) => {
         <div className="-mt-8">
           <NoneRangeCoffees isReRender={isReRender} />
         </div>
-        <div className="ml-8 ">
-          <CamkasCoffeeBar />
-        </div>
+       
         <div className="absolute bottom-4 animate-bounce right-40 ">
           <a href="https://instagram.com/cafemarya" target="_blank">
             <Image src={Instagram} width={30} />
