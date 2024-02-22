@@ -11,7 +11,7 @@ const BreakfastItems = ({isReRender}) => {
       </div>
       {isReRender && (
         <div className="flex flex-col justify-center">
-          {menue[5].map((item, idx) => (
+          {menue[4].map((item, idx) => (
             <div className=" flex  justify-center items-center " key={idx}>
               <AnimatePresence>
                 <motion.li

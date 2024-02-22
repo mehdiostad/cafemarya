@@ -21,7 +21,7 @@ const IceCoffeeMenue = ({ isReRender }) => {
        
         <div className="absolute bottom-4 animate-bounce right-40 ">
           <a href="https://instagram.com/cafemarya" target="_blank">
-            <Image src={Instagram} width={30} />
+            <Image src={Instagram} width={30} ></Image>
           </a>
         </div>
       </div>

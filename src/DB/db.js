@@ -11,59 +11,54 @@ let rangeCoffees = [
   },
   {
     caffeeName: "اسپرسو آفوگاتو",
-    smallPrice: "۷۰",
-    largePrice: "۸۰",
+    smallPrice: "۷۵",
+    largePrice: "۸۵",
   },
   {
     caffeeName: "امریکانو",
-    smallPrice: "۴۵",
-    largePrice: "۵۵",
+    smallPrice: "۵۰",
+    largePrice: "۶۰",
   },
   {
     caffeeName: "کورتادو",
-    smallPrice: "۵۸",
-    largePrice: "۶۸",
-  },
-  {
-    caffeeName: "کارامل ماکیاتو",
-    smallPrice: "۶۰",
-    largePrice: "۶۵",
-  },
-  {
-    caffeeName: "موکانوتلا",
-    smallPrice: "۷۰",
-    largePrice: "۷۵",
-  },
-  {
-    caffeeName: "لاته",
     smallPrice: "۶۰",
     largePrice: "۷۰",
   },
   {
+    caffeeName: "کارامل ماکیاتو",
+    smallPrice: "۷۰",
+    largePrice: "۸۰",
+  },
+  {
+    caffeeName: "موکانوتلا",
+    smallPrice: "۸۰",
+    largePrice: "۹۰",
+  },
+  {
+    caffeeName: "لاته",
+    smallPrice: "۷۰",
+    largePrice: "۸۰",
+  },
+  {
     caffeeName: "کاپوچینو",
-    smallPrice: "۵۵",
-    largePrice: "۶۵",
+    smallPrice: "۶۰",
+    largePrice: "۷۰",
   },
   {
     caffeeName: "فلت وایت",
-    smallPrice: "۶۳",
-    largePrice: "۷۳",
+    smallPrice: "۷۰",
+    largePrice: "۸۰",
   },
   {
     caffeeName: "کوک اسپرسو",
-    smallPrice: "۶۸",
-    largePrice: "۷۸",
-  },
-  {
-    caffeeName: "آفوگاتو",
-    smallPrice: "۸۰",
-    largePrice: "۹۰",
+    smallPrice: "۷۰",
+    largePrice: "۸۰",
   },
 ];
 let noneRangeCoffees = [
   {
     coffeeName: "ترک",
-    price: "۵۸",
+    price: "۶۵",
   },
   {
     coffeeName: "نسکافه گلد",
@@ -74,11 +69,11 @@ let noneRangeCoffees = [
     price: "۱۰۸",
   },
   {
-    coffeeName: "شیرگرم کوچک",
+    coffeeName: "شیر گرم کوچک",
     price: "۳۰",
   },
   {
-    coffeeName: "شیرگرم بزرگ",
+    coffeeName: "شیر گرم بزرگ",
     price: "۴۰",
   },
   {
@@ -151,31 +146,24 @@ let teaItems = [
 let twoPriceColdDrinks = [
   {
     itemName: "موهیتو",
-    smallPrice: "۸۵",
-    largePrice: "۱۱۵",
+    price: "۱۰۰",
   },
   {
-    itemName: "نوشیدنی آلبالو دارچین کوچک",
-    smallPrice: "۸۵",
-    largePrice: "۱۱۵",
+    itemName: "نوشیدنی آلبالو دارچین",
+    price: "۹۰",
   },
   {
     itemName: "نوشیدنی پرتقالی",
-    smallPrice: "۸۵",
-    largePrice: "۱۱۵",
+    price: "۹۰",
   },
   {
     itemName: "نوشیدنی بلوکاراسائو",
-    smallPrice: "۹۰",
-    largePrice: "۱۲۰",
+    price: "۹۵",
   },
   {
     itemName: "نوشیدنی کرن بری",
-    smallPrice: "۸۵",
-    largePrice: "۱۲۰",
+    price: "۹۰",
   },
-];
-let noneRangeColdDrinks = [
   {
     itemName: "اسموتی هندوانه",
     price: "۱۳۵",
@@ -188,10 +176,7 @@ let noneRangeColdDrinks = [
     itemName: "شیک وانیل",
     price: "۱۱۰",
   },
-  {
-    itemName: "شیک شکلات",
-    price: "۱۱۵",
-  },
+
   {
     itemName: "شیک بادام زمینی",
     price: "۱۲۵",
@@ -200,10 +185,7 @@ let noneRangeColdDrinks = [
     itemName: "شیک توت فرنگی",
     price: "۱۲۰",
   },
-  {
-    itemName: "شیک البالو",
-    price: "۱۲۰",
-  },
+
   {
     itemName: "شیک کارامل",
     price: "۱۱۵",
@@ -213,46 +195,71 @@ let noneRangeColdDrinks = [
     price: "۱۳۵",
   },
 ];
+
 let breakFastItems = [
   {
     itemName: "کیک شکلاتی",
     price: "۸۷",
   },
   {
-    itemName: "کیک ردولوت",
-    price: "۸۵",
+    itemName: "کیک هویج گردو",
+    price: "۵۵",
   },
   {
-    itemName: "پنکیک تازه",
-    price: "۸۰",
-  },
-  {
-    itemName: "باقلوا",
-    price: "۸۰",
-  },
-  {
-    itemName: "سیب زمینی",
-    price: "۹۸",
-  },
-  {
-    itemName: "سوسیس تخم مرغ",
-    price: "۹۰",
-  },
-  {
-    itemName: "کوکتل تخم مرغ",
-    price: "۱۱۰",
-  },
-  {
-    itemName: "املت دو تخم مرغه",
+    itemName: "موچی صورتی",
     price: "۷۵",
   },
   {
-    itemName: "سه تخم مرغه",
-    price: "۸۷",
+    itemName: "موچی آبی",
+    price: "۷۵",
+  },
+  {
+    itemName: "موچی زرد",
+    price: "۷۵",
+  },
+  {
+    itemName: "موچی بنفش",
+    price: "۷۵",
+  },
+  {
+    itemName: "پنکیک تازه",
+    price: "۹۰",
+  },
+  {
+    itemName: "باقلوا",
+    price: "۴۰",
+  },
+  {
+    itemName: "سیب زمینی",
+    price: "۱۰۵",
+  },
+  {
+    itemName: "سوسیس تخم مرغ",
+    price: "۹۵",
+  },
+  {
+    itemName: "کوکتل تخم مرغ",
+    price: "۱۰۵",
+  },
+  {
+    itemName: "املت دو تخم مرغه",
+    price: "۸۵",
+  },
+  {
+    itemName: "املت سه تخم مرغه",
+    price: "۹۵",
+  },
+  {
+    itemName: "کوکتل تخم مرغ",
+    price: "۱۰۵",
+  },
+  {
+    itemName: "سوسیس تخم مرغ",
+    price: "۹۵",
   },
   {
     itemName: "نیمرو",
-    price: "۴۸",
+    price: "۵۰",
   },
 ];
 const menue = [
@@ -260,7 +267,6 @@ const menue = [
   noneRangeCoffees,
   teaItems,
   twoPriceColdDrinks,
-  noneRangeColdDrinks,
   breakFastItems,
 ];
 

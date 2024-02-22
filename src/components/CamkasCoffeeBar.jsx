@@ -11,6 +11,8 @@ const camkasCoffeeBar = () => {
             سیروپ ها: فندق، بادام، آیریش، کارامل، شکلات، وانیل
           </div>
           <div className="animate-pulse">+تومان٨٠٠٠</div>
+          <div className="border-t-1 border mb-2 border-white w-full"></div>
+          <div className="font-bold">نوشیدنی + آیس = ۵۰۰۰ تومان افزایش قیمت</div>
         </div>
       </div>
     </div>

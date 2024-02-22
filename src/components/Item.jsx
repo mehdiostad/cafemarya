@@ -138,7 +138,7 @@ const item = ({ itemName, smallPrice, largePrice }) => {
           </>
         ) : (
           <>
-            <div className="flex justify-between w-72  mt-4 mr-1">
+            <div className="flex justify-between w-72  mt-3 mr-1">
               <div className=" flex gap-6 font-bold text-lg ">
                 <div>{largePrice}</div>
                 <div>{smallPrice}</div>

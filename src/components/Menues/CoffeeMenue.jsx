@@ -15,10 +15,10 @@ const CoffeeMenue = () => {
           <Logo logo={logo} />
         </div>
 
-        <div className="-mt-8">
+        <div className="-mt-8 ">
           <CoffeeItems />
         </div>
-        <div className="ml-5 ">
+        <div className="ml-5 -mt-6">
           <CamkasCoffeeBar />
         </div>
       </div>
