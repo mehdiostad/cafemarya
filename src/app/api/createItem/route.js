@@ -1,19 +1,17 @@
 import connect from "@/utils/mongodb";
 import { NextResponse } from "next/server";
-import mongoose from "mongoose";
-let CoffeesModel = mongoose.model("CoffeesModel");
-let HotDrinkModel = mongoose.model("HotDrinksModel");
-let TeasModel = mongoose.model("TeasModel");
-let ColdDrinksModel = mongoose.model("ColdDrinksModel");
-let BreakFastModel = mongoose.model("BreakFastsModel");
-
+import CoffeeModel from "../../../Models/CoffeesModel";
+import HotDrinkModel from "../../../Models/HotDrinksModel";
+import TeasModel from "../../../Models/TeaModel";
+import ColdDrinksModel from "../../../Models/ColdDrinks";
+import BreakFastModel from "../../../Models/BreakFastModel";
 export const POST = async (request, response) => {
   const req = await request.json();
   await connect();
   console.log(req);
   switch (req.type) {
     case "coffee":
-      const newCoffee = new CoffeesModel({
+      const newCoffee = new CoffeeModel({
         coffeName: req.coffeName,
         smallPrice: req.smallPrice,
         largePrice: req.largePrice,

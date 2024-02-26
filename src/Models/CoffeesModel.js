@@ -11,4 +11,4 @@ const cofeeSchema = new Schema(
     timestamps: true,
   }
 );
-module.exports= mongoose.model.CoffeesModel || mongoose.model("CoffeesModel",cofeeSchema);
+export default mongoose.model.CoffeeModel || mongoose.model("CoffeeModel",cofeeSchema);
