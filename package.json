@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
+    "axios": "^1.6.7",
     "flubber": "^0.4.2",
     "framer-motion": "^10.18.0",
     "mongoose": "^6.11.1",

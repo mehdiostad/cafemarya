@@ -1,30 +1,32 @@
 import connect from "@/utils/mongodb";
 import { NextResponse } from "next/server";
-import CoffeeModel from "../../../Models/CoffeesModel";
-import HotDrinkModel from "../../../Models/HotDrinksModel";
-import TeasModel from "../../../Models/TeaModel";
-import ColdDrinksModel from "../../../Models/ColdDrinks";
-import BreakFastModel from "../../../Models/BreakFastModel";
+
+import { coffeeModel } from "@/Models/CoffeeModel";
+import { hotDrinkModel } from "@/Models/HotDrinkModel";
+import { coldDrinkModel } from "@/Models/ColdDrinkModel";
+import { teaModle } from "@/Models/TeaModel";
+import { breakFastModel } from "@/Models/BreakFastModel";
 export const POST = async (request, response) => {
   const req = await request.json();
   await connect();
-  console.log(req);
+
   switch (req.type) {
     case "coffee":
-      const newCoffee = new CoffeeModel({
-        coffeName: req.coffeName,
-        smallPrice: req.smallPrice,
-        largePrice: req.largePrice,
-      });
       try {
+        const newCoffee = new coffeeModel({
+          type: req.type,
+          itemName: req.itemName,
+          smallPrice: req.smallPrice,
+          largePrice: req.largePrice,
+        });
         await newCoffee.save();
-        return new NextResponse("Coffee has been added!", { status: 200 });
+        return new NextResponse(JSON.stringify(newCoffee), { status: 200 });
       } catch (error) {
         return new NextResponse(error.message, { status: 500 });
       }
       break;
     case "hot drink":
-      const newHotDrink = new HotDrinkModel({
+      const newHotDrink = new hotDrinkModel({
         itemName: req.itemName,
         price: req.price,
       });
@@ -38,19 +40,19 @@ export const POST = async (request, response) => {
       }
       break;
     case "tea":
-      const newTea = new TeasModel({
+      const newTea = new teaModle({
         itemName: req.itemName,
         price: req.price,
       });
       try {
-        await newHotDrink.save();
+        await newTea.save();
         return new NextResponse("Tea has been added!", { status: 200 });
       } catch (error) {
         return new NextResponse(error.message, { status: 500 });
       }
       break;
-    case "tea":
-      const newColdDrink = new ColdDrinksModel({
+    case "cold drink":
+      const newColdDrink = new coldDrinkModel({
         itemName: req.itemName,
         price: req.price,
       });
@@ -64,7 +66,7 @@ export const POST = async (request, response) => {
       }
       break;
     case "break fast":
-      const newBreakeFast = new BreakFastModel({
+      const newBreakeFast = new breakFastModel({
         itemName: req.itemName,
         price: req.price,
       });

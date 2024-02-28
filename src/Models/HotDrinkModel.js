@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
-const coldDrinkSchema = new Schema(
+const hotDrinkSchema = new Schema(
   {
-    type:String,
+    type: String,
     itemName: { type: String, require: true },
     price: String,
   },
@@ -10,4 +10,5 @@ const coldDrinkSchema = new Schema(
     timestamps: true,
   }
 );
-export default mongoose.model.ColdDrinksModel || mongoose.model("ColdDrinksModel",coldDrinkSchema);
+export const hotDrinkModel =
+  mongoose.models.HotDrink || mongoose.model("HotDrink", hotDrinkSchema);

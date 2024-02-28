@@ -2,7 +2,7 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 const breakFastSchema = new Schema(
   {
-    type:String,
+    type: String,
     itemName: { type: String, require: true },
     price: String,
   },
@@ -10,4 +10,5 @@ const breakFastSchema = new Schema(
     timestamps: true,
   }
 );
-export default mongoose.model.BreakFastsModel || mongoose.model("BreakFastsModel",breakFastSchema);
+export const breakFastModel =
+  mongoose.models.BreakFast || mongoose.model("BreakFast", breakFastSchema);

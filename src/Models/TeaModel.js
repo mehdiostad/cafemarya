@@ -10,4 +10,5 @@ const teaSchema = new Schema(
     timestamps: true,
   }
 );
-export default mongoose.model.TeasModel || mongoose.model("TeasModel",teaSchema);
+export const teaModle =
+  mongoose.models.Tea || mongoose.model("Tea", teaSchema);
