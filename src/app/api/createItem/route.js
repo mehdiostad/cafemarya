@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import { coffeeModel } from "@/Models/CoffeeModel";
 import { hotDrinkModel } from "@/Models/HotDrinkModel";
 import { coldDrinkModel } from "@/Models/ColdDrinkModel";
-import { teaModle } from "@/Models/TeaModel";
+import { teaModel } from "@/Models/TeaModel";
 import { breakFastModel } from "@/Models/BreakFastModel";
 export const POST = async (request, response) => {
   const req = await request.json();
@@ -40,7 +40,7 @@ export const POST = async (request, response) => {
       }
       break;
     case "tea":
-      const newTea = new teaModle({
+      const newTea = new teaModel({
         itemName: req.itemName,
         price: req.price,
       });

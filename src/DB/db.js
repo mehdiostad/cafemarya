@@ -249,14 +249,7 @@ let breakFastItems = [
     itemName: "املت سه تخم مرغه",
     price: "۹۵",
   },
-  {
-    itemName: "کوکتل تخم مرغ",
-    price: "۱۰۵",
-  },
-  {
-    itemName: "سوسیس تخم مرغ",
-    price: "۹۵",
-  },
+
   {
     itemName: "نیمرو",
     price: "۵۰",

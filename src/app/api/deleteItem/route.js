@@ -1,16 +1,17 @@
 import { NextResponse } from "next/server";
-import CoffeeModel from "../../../Models/CoffeeModel";
-import HotDrinkModel from "../../../Models/HotDrinkModel";
-import TeasModel from "../../../Models/TeaModel";
-import ColdDrinksModel from "../../../Models/ColdDrinkModel";
-import BreakFastModel from "../../../Models/BreakFastModel";
+import { coffeeModel } from "@/Models/CoffeeModel";
+import { hotDrinkModel } from "@/Models/HotDrinkModel";
+import { coldDrinkModel } from "@/Models/ColdDrinkModel";
+import { teaModel } from "@/Models/TeaModel";
+import { breakFastModel } from "@/Models/BreakFastModel";
 export const DELETE = async (req) => {
-  const { data } = await req.json();
+  const data = await req.json();
+  console.log(data, "data");
   try {
-    switch (type) {
+    switch (data.type) {
       case "coffee":
         try {
-          await CoffeeModel.findOneAndDelete({ _id: data.id });
+          await coffeeModel.findOneAndDelete({ _id: data.id });
 
           return new NextResponse("Coffee has been deleted!", { status: 200 });
         } catch (error) {
@@ -19,7 +20,7 @@ export const DELETE = async (req) => {
         break;
       case "hot drink":
         try {
-          await HotDrinkModel.findOneAndDelete({ _id: data.id });
+          await hotDrinkModel.findOneAndDelete({ _id: data.id });
 
           return new NextResponse("Hot Drink has been deleted!", {
             status: 200,
@@ -30,7 +31,7 @@ export const DELETE = async (req) => {
         break;
       case "tea":
         try {
-          await TeasModel.findOneAndDelete({ _id: data.id });
+          await teaModel.findOneAndDelete({ _id: data.id });
 
           return new NextResponse("Tea has been deleted!", { status: 200 });
         } catch (error) {
@@ -39,7 +40,7 @@ export const DELETE = async (req) => {
         break;
       case "cold drink":
         try {
-          await ColdDrinksModel.findOneAndDelete({ _id: data.id });
+          await coldDrinkModel.findOneAndDelete({ _id: data.id });
 
           return new NextResponse("Cold Drink has been deleted!", {
             status: 200,
@@ -50,7 +51,7 @@ export const DELETE = async (req) => {
         break;
       case "break fast":
         try {
-          await BreakFastModel.findOneAndDelete({ _id: data.id });
+          await breakFastModel.findOneAndDelete({ _id: data.id });
 
           return new NextResponse("Break fast has been deleted!", {
             status: 200,

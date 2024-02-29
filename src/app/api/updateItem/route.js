@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { coffeeModel } from "@/Models/CoffeeModel";
 import { hotDrinkModel } from "@/Models/HotDrinkModel";
 import { coldDrinkModel } from "@/Models/ColdDrinkModel";
-import { teaModle } from "@/Models/TeaModel";
+import { teaModel } from "@/Models/TeaModel";
 import { breakFastModel } from "@/Models/BreakFastModel";
 export const PUT = async (req) => {
   const { data, type } = await req.json();
@@ -39,7 +39,7 @@ export const PUT = async (req) => {
       break;
     case "tea":
       try {
-        const tea = await teaModle.findById({ _id: data.id });
+        const tea = await teaModel.findById({ _id: data.id });
         await tea.updateOne({
           $set: {
             itemName: data.itemName,
