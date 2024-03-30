@@ -1,9 +1,19 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Card from "@/components/Card";
 import Item from "@/components/Item";
 import menue from "@/DB/db";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios"
 const ColdDrinkItems = ({ isReRender }) => {
+  const [coldDrinks , setColdDrinks] = useState(null)
+  useEffect(()=>{
+    const fetchColdDrinks = async ()=>{
+      const {data} = await axios.get("http://localhost:3000/api/getAll");
+      setColdDrinks(data[2])
+    }
+    fetchColdDrinks()
+  }, [])
   return (
     <div>
       <div className=" flex justify-center mt-12">
@@ -12,7 +22,7 @@ const ColdDrinkItems = ({ isReRender }) => {
       {isReRender && (
         <div className="flex flex-col justify-center">
       
-          {menue[3].map((item, idx) => (
+          {coldDrinks && coldDrinks.map((item, idx) => (
             <div className=" flex  justify-center items-center " key={idx}>
               <AnimatePresence>
                 <motion.li

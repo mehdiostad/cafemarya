@@ -5,6 +5,8 @@ const breakFastSchema = new Schema(
     type: String,
     itemName: { type: String, require: true },
     price: String,
+    desc: String,
+    img: String,
   },
   {
     timestamps: true,

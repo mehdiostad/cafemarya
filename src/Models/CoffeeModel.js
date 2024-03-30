@@ -6,9 +6,12 @@ const coffeeSchema = new Schema(
     itemName: String,
     smallPrice: String,
     largePrice: String,
+    desc: String,
+    img: String,
   },
   {
     timestamps: true,
   }
 );
-export const coffeeModel = mongoose.models.Coffee || mongoose.model("Coffee", coffeeSchema);
+export const coffeeModel =
+  mongoose.models.Coffee || mongoose.model("Coffee", coffeeSchema);

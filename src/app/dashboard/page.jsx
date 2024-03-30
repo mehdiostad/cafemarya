@@ -29,10 +29,19 @@ const page = () => {
     if (
       e.target[0].value == "" &&
       e.target[1].value == "" &&
-      e.target[2].value == ""
+      e.target[2].value == "" &&
+      e.target[3].value == "" &&
+      type == "coffee"
     ) {
       alert("حداقل یکی از مقادیر باید پر شده باشند");
       return false;
+    } else if (
+      type !== "coffee" &&
+      e.target[0].value == "" &&
+      e.target[1].value == "" &&
+      e.target[2].value == ""
+    ) {
+      alert("حداقل یکی از مقادیر باید پر شده باشند");
     }
     setIsUpdated(false);
     if (type == "coffee") {
@@ -43,6 +52,7 @@ const page = () => {
             e.target[1].value == "" ? item.smallPrice : e.target[1].value,
           largePrice:
             e.target[2].value == "" ? item.largePrice : e.target[2].value,
+          desc: e.target[3].value == "" ? item.desc : e.target[3].value,
           id: item._id,
         },
         type,
@@ -51,6 +61,7 @@ const page = () => {
         e.target[0].value = "";
         e.target[1].value = "";
         e.target[2].value = "";
+        e.target[3].value = "";
         toast.success("آیتم با موفقیت تغییر کرد");
         setIsUpdated(true);
       }
@@ -61,7 +72,7 @@ const page = () => {
             itemName:
               e.target[0].value == "" ? item.itemName : e.target[0].value,
             price: e.target[1].value == "" ? item.price : e.target[1].value,
-
+            desc: e.target[2].value == "" ? item.desc : e.target[2].value,
             id: item._id,
           },
           type,
@@ -70,6 +81,7 @@ const page = () => {
         if (data.status == 200) {
           e.target[0].value = "";
           e.target[1].value = "";
+          e.target[2].value = "";
 
           toast.success("آیتم با موفقیت تغییر کرد");
           setIsUpdated(true);
@@ -309,6 +321,28 @@ const page = () => {
                           <div dir="rtl"> نام: {coffee.itemName}</div>
                           <div>قیمت تک : {coffee.smallPrice}</div>
                           <div>قیمت دبل: {coffee.largePrice}</div>
+                          <input
+                            type="file"
+                            className="w-20"
+                            onChange={async (e) => {
+                              const formData = new FormData();
+                              formData.append("file", e.target.files[0]);
+                              formData.append("type", "coffee");
+                              formData.append("id", coffee._id);
+                              const res = await axios.post(
+                                "http://localhost:3000/api/uploadImage",
+                                formData,
+                                {
+                                  headers: {
+                                    "Content-Type": "multipart/form-data",
+                                  },
+                                }
+                              );
+                              if (res) {
+                                toast.success("تصویر با موفقیت اضافه شد");
+                              } else toast.error("مشکلی رخ داده است");
+                            }}
+                          />
                         </div>
                         <div className="flex gap-4">
                           <form
@@ -330,6 +364,13 @@ const page = () => {
                               placeholder="تغییر قیمت دبل"
                               className="text-black p-2 rounded-lg shadow-lg border-2"
                             />
+                            <textarea
+                              dir="rtl"
+                              placeholder="توضیحات"
+                              cols="15"
+                              rows="5"
+                              className="text-black placeholder:text-slate-500  p-2 rounded-lg shadow-lg border-2"
+                            ></textarea>
                             <button
                               type="submit"
                               className="p-2 rounded-lg border-2 text-white border-dashed hover:text-green-500 transition"
@@ -374,6 +415,28 @@ const page = () => {
                           <div className="flex items-center flex-col gap-8">
                             <div dir="rtl"> نام آیتم: {hotDrink.itemName}</div>
                             <div>قیمت : {hotDrink.price}</div>
+                            <input
+                              type="file"
+                              className="w-20"
+                              onChange={async (e) => {
+                                const formData = new FormData();
+                                formData.append("file", e.target.files[0]);
+                                formData.append("type", "hot drink");
+                                formData.append("id", hotDrink._id);
+                                const res = await axios.post(
+                                  "http://localhost:3000/api/uploadImage",
+                                  formData,
+                                  {
+                                    headers: {
+                                      "Content-Type": "multipart/form-data",
+                                    },
+                                  }
+                                );
+                                if (res) {
+                                  toast.success("تصویر با موفقیت اضافه شد");
+                                } else toast.error("مشکلی رخ داده است");
+                              }}
+                            />
                           </div>
                           <div className="flex gap-4">
                             <form
@@ -393,6 +456,13 @@ const page = () => {
                                 placeholder="تغییر قیمت"
                                 className="text-black p-2 rounded-lg shadow-lg border-2"
                               />
+                              <textarea
+                              placeholder="توضیحات"
+                                dir="rtl"
+                                cols="15"
+                                rows="5"
+                                className="text-black placeholder:text-slate-500 p-2 rounded-lg shadow-lg border-2"
+                              ></textarea>
                               <button
                                 type="submit"
                                 className="p-2 rounded-lg text-white border-2 border-dashed hover:text-green-500 transition"
@@ -437,6 +507,28 @@ const page = () => {
                         <div className="flex flex-col gap-4">
                           <div dir="rtl"> نام آیتم: {tea.itemName}</div>
                           <div>قیمت : {tea.price}</div>
+                          <input
+                            type="file"
+                            className="w-20"
+                            onChange={async (e) => {
+                              const formData = new FormData();
+                              formData.append("file", e.target.files[0]);
+                              formData.append("type", "tea");
+                              formData.append("id", tea._id);
+                              const res = await axios.post(
+                                "http://localhost:3000/api/uploadImage",
+                                formData,
+                                {
+                                  headers: {
+                                    "Content-Type": "multipart/form-data",
+                                  },
+                                }
+                              );
+                              if (res) {
+                                toast.success("تصویر با موفقیت اضافه شد");
+                              } else toast.error("مشکلی رخ داده است");
+                            }}
+                          />
                         </div>
                         <div className="flex gap-4">
                           <form
@@ -454,6 +546,13 @@ const page = () => {
                               placeholder="تغییر قیمت"
                               className="text-black p-2 rounded-lg shadow-lg border-2"
                             />
+                            <textarea
+                              dir="rtl"
+                              placeholder="توضیحات"
+                              cols="15"
+                              rows="5"
+                              className="text-black placeholder:text-slate-500  p-2 rounded-lg shadow-lg border-2"
+                            ></textarea>
                             <button
                               type="submit"
                               className="p-2 rounded-lg border-2 border-dashed hover:text-green-500 transition"
@@ -497,6 +596,28 @@ const page = () => {
                         <div>
                           <div dir="rtl"> نام آیتم: {coldDrink.itemName}</div>
                           <div>قیمت : {coldDrink.price}</div>
+                          <input
+                            type="file"
+                            className="w-20"
+                            onChange={async (e) => {
+                              const formData = new FormData();
+                              formData.append("file", e.target.files[0]);
+                              formData.append("type", "cold drink");
+                              formData.append("id", coldDrink._id);
+                              const res = await axios.post(
+                                "http://localhost:3000/api/uploadImage",
+                                formData,
+                                {
+                                  headers: {
+                                    "Content-Type": "multipart/form-data",
+                                  },
+                                }
+                              );
+                              if (res) {
+                                toast.success("تصویر با موفقیت اضافه شد");
+                              } else toast.error("مشکلی رخ داده است");
+                            }}
+                          />
                         </div>
                         <div className="flex gap-4 ">
                           <form
@@ -516,6 +637,13 @@ const page = () => {
                               placeholder="تغییر قیمت"
                               className="text-black p-2 rounded-lg shadow-lg border-2"
                             />
+                            <textarea
+                              dir="rtl"
+                              placeholder="توضیحات"
+                              cols="15"
+                              rows="5"
+                              className="text-black placeholder:text-slate-500  p-2 rounded-lg shadow-lg border-2"
+                            ></textarea>
                             <button
                               type="submit"
                               className="p-2 rounded-lg border-2 border-dashed hover:text-green-500 transition"
@@ -559,6 +687,28 @@ const page = () => {
                         <div>
                           <div dir="rtl"> نام آیتم: {breakFast.itemName}</div>
                           <div>قیمت : {breakFast.price}</div>
+                          <input
+                            type="file"
+                            className="w-20"
+                            onChange={async (e) => {
+                              const formData = new FormData();
+                              formData.append("file", e.target.files[0]);
+                              formData.append("type", "break fast");
+                              formData.append("id", breakFast._id);
+                              const res = await axios.post(
+                                "http://localhost:3000/api/uploadImage",
+                                formData,
+                                {
+                                  headers: {
+                                    "Content-Type": "multipart/form-data",
+                                  },
+                                }
+                              );
+                              if (res) {
+                                toast.success("تصویر با موفقیت اضافه شد");
+                              } else toast.error("مشکلی رخ داده است");
+                            }}
+                          />
                         </div>
                         <div className="flex gap-4">
                           <form
@@ -578,6 +728,13 @@ const page = () => {
                               placeholder="تغییر قیمت"
                               className="text-black p-2 rounded-lg shadow-lg border-2"
                             />
+                            <textarea
+                              dir="rtl"
+                              placeholder="توضیحات"
+                              cols="15"
+                              rows="5"
+                              className="text-black placeholder:text-slate-500  p-2 rounded-lg shadow-lg border-2"
+                            ></textarea>
                             <button
                               type="submit"
                               className="p-2 rounded-lg border-2 border-dashed hover:text-green-500 transition"

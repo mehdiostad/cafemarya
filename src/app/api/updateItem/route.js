@@ -4,20 +4,27 @@ import { hotDrinkModel } from "@/Models/HotDrinkModel";
 import { coldDrinkModel } from "@/Models/ColdDrinkModel";
 import { teaModel } from "@/Models/TeaModel";
 import { breakFastModel } from "@/Models/BreakFastModel";
+import connect from "@/utils/mongodb";
 export const PUT = async (req) => {
   const { data, type } = await req.json();
   console.log(data, type);
+  await connect();
   switch (type) {
     case "coffee":
       try {
+        console.log(data.img);
         const coffeeItem = await coffeeModel.findById({ _id: data.id });
+        console.log(coffeeItem);
         await coffeeItem.updateOne({
           $set: {
             itemName: data.itemName,
+            desc: data.desc,
+            img: data.img,
             smallPrice: data.smallPrice,
             largePrice: data.largePrice,
           },
         });
+        console.log(coffeeItem);
         return new NextResponse("Coffee has been updated!", { status: 200 });
       } catch (error) {
         return new NextResponse(error.message, { status: 500 });
@@ -29,6 +36,8 @@ export const PUT = async (req) => {
         await hotDrink.updateOne({
           $set: {
             itemName: data.itemName,
+            desc: data.desc,
+            img: data.img,
             price: data.price,
           },
         });
@@ -43,6 +52,8 @@ export const PUT = async (req) => {
         await tea.updateOne({
           $set: {
             itemName: data.itemName,
+            desc: data.desc,
+            img: data.img,
             price: data.price,
           },
         });
@@ -57,6 +68,8 @@ export const PUT = async (req) => {
         await coldDrink.updateOne({
           $set: {
             itemName: data.itemName,
+            desc: data.desc,
+            img: data.img,
             price: data.price,
           },
         });
@@ -73,6 +86,8 @@ export const PUT = async (req) => {
         await breakFast.updateOne({
           $set: {
             itemName: data.itemName,
+            desc: data.desc,
+            img: data.img,
             price: data.price,
           },
         });

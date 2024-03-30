@@ -5,6 +5,8 @@ const teaSchema = new Schema(
     type: String,
     itemName: String,
     price: String,
+    desc: String,
+    img: String,
   },
   {
     timestamps: true,

@@ -5,7 +5,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import cafeImage from "../../public/pexels-chevanon-photography-312418.jpg";
-const item = ({ itemName, smallPrice, largePrice }) => {
+const item = ({ itemName, smallPrice, largePrice, img, desc }) => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
   const backdropVariant = {
@@ -95,7 +95,9 @@ const item = ({ itemName, smallPrice, largePrice }) => {
                           // ></iframe>
                           <div className="flex justify-center items-center">
                             <Image
-                              src={cafeImage}
+                              src={img ? `../public/uploads/${img}` : cafeImage}
+                              width={200}
+                              height={400}
                               className="object-cover w-52"
                             />
                           </div>
@@ -106,10 +108,7 @@ const item = ({ itemName, smallPrice, largePrice }) => {
                         style={{ direction: "rtl" }}
                       >
                         <p className="text-black flex justify-center items-center mr-8 ">
-                          آفوگاتو یکی از بهترین و قدیمی ترین دسر های ایتالیایی
-                          هست که طرز تهیه اون بسیار سادست . آفوگاتو یک ترکیب
-                          بسیار ساده از بستنی و قهوه اسپرسو هست که علاوه بر ساده
-                          بودن، بسیار لذیذ و خوشمزست .
+                          {desc == "" ? "هنوز توضیحاتی ثبت نشده است" : desc}
                         </p>
                       </div>
                     </div>
@@ -133,7 +132,7 @@ const item = ({ itemName, smallPrice, largePrice }) => {
                   </div>
                 </div>
               </motion.div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black h-[200vh]"></div>
+              <div className="opacity-25 fixed inset-0 z-40 bg-black h-[200vh]"></div>
             </motion.div>
           </>
         ) : (
